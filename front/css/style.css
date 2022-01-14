@@ -113,6 +113,16 @@ h2 {
 	display: flex;
 }
 
+.bani{
+	width: 40%;
+	height: 350px;
+	object-fit: cover;
+}
+#canape{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-content: space-between;
+}
 
 
 
