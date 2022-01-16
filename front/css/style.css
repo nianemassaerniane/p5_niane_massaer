@@ -119,9 +119,10 @@ h2 {
 	object-fit: cover;
 }
 #canape{
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
+	align-items: center;
 }
 
 
@@ -136,10 +137,19 @@ main {
 
 /*items*/
 .items {
-	margin-bottom: 135px;
+	margin-top: 55px;
+}
+.items1{
 	display: flex;
+	flex-direction: column;
 	justify-content: space-around;
+	align-items: center;
+}
+#items{
+	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
 }
 .items a {
 	width: 21%;
@@ -149,15 +159,26 @@ main {
 .items a:hover article {
 	box-shadow: rgba(42, 18, 206, 0.9) 0 0 22px 6px;
 }
-.items article {
+/*items*/ 
+.article {
 	background-color: var(--secondary-color);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 40px;
 	padding-top: 25px;
-	width: 100%;
+	width: 10%;
 	border-radius: 10px;
+}
+.card{
+	margin: 30px;
+	background-color: var(--secondary-color);
+	border-radius: 20px;
+
+}
+.card-size{
+	width: 450px;
+	min-height: auto;
 }
 .items article img {
 	width: 160px;
@@ -165,24 +186,41 @@ main {
 	object-fit: cover;
 	border-radius: 10px;
 }
-.items article h3 {
+.taille_image{
+	width: 400px;
+	height: 350px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+/*.items article h3 */
+.titre{
 	font-size: 22px;
 	font-weight: 700;
 	text-align: center;
 	text-transform: uppercase;
 }
-.items article p {
+.description-text {
 	text-align: center;
 	padding-left: 23px;
 	padding-right: 23px;
 	box-sizing: border-box;
-	overflow: hidden;
 	text-overflow: ellipsis;
 
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
 	white-space: normal;
+}
+.boutton-detail{
+	box-shadow: 0;
+  border-radius: 10px;
+  font-size: 1em;
+  width: 100px;
+  height: 40px;
+  background-color: rgb(231, 65, 43);
+  color: beige;
+  cursor: pointer;
 }
 
 
