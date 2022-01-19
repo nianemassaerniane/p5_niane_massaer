@@ -22,6 +22,14 @@ document.getElementById("items").innerHTML =kanapData.map( (kanap) =>`
 <p>${kanap.price}€</p>
 </div>` ,
 ).join("");
+let boutons = document.querySelectorAll(".boutton-detail");
+console.log(boutons);
+boutons.forEach((bouton) =>
+bouton.addEventListener("click", () =>{
+    console.log(bouton);
+    window.location = `product.html?${bouton.id}` ;
+}),
+);
 };
 
 kanapDisplay();
