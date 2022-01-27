@@ -37,5 +37,28 @@ const produitDisplay = async () => {
         console.log(tagOption);
         
     });
+    ajoutPanier(produitData);
 };
 produitDisplay();
+const ajoutPanier = ( ) =>{
+    let bouton =  document. getElementById("addToCart")
+    console.log(bouton);
+    bouton;addEventListener("click" ,() =>{
+        let produitTableau = JSON.parse(localStorage.getItem("produit"))
+    let select  = document.getElementById("colors")
+    console.log(select.value);
+    console.log(produitTableau)
+    const fusionProduitCouleur = Object.assign({} , produitData, {
+        couleur :`${select.value}`, 
+        quantite : 1,
+    }
+        );
+        console.log(fusionProduitCouleur)
+    if(produitTableau  == null){
+        produitTableau = [];
+        produitTableau.push(produitData);
+        console.log(produitTableau);
+        localStorage.setItem("produit",JSON.stringify(produitTableau))
+    }
+    });
+};
