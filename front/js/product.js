@@ -27,3 +27,33 @@ function kanapDonnee () {
         console.log("Erreur de la requête API");
     })
 }
+
+function getPost(article){
+    // Integration de l'image
+    let imageProduit = document.createElement("img");
+    document.querySelector(".item__img").appendChild(imageProduit);
+    imageProduit.src = article.imageUrl;
+    imageProduit.alt = article.altTxt;
+
+    // integration du nom du produit 
+    let nomProduit = document.getElementById('title');
+    nomProduit.innerHTML = article.name;
+
+    // integration du prix du produit 
+    let prixProduit = document.getElementById('price');
+    prixProduit.innerHTML = article.price;
+
+    // integration de la description du produit 
+    let descriptionProduit = document.getElementById('description');
+    descriptionProduit.innerHTML = article.description;
+
+    // Gestion des options de couleurs avec la liste déroulante 
+    for (let colors of article.colors){
+        console.table(colors);
+        let couleurProduit = document.createElement("option");
+        document.querySelector("#colors").appendChild(couleurProduit);
+        couleurProduit.value = colors;
+        couleurProduit.innerHTML = colors;
+    }
+    addToCart(article);
+}
