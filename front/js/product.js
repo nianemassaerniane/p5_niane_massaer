@@ -17,16 +17,12 @@ const produitDisplay = async () => {
     <div id = "card${produitData._id} " class="items1 card-size card ">
     <img class="taille_image"  src="${produitData.imageUrl}"alt ="image des  canape ${produitData.name}"/>
     </div>`;
-    document.getElementById("description").innerHTML=`
-    ${produitData.description}
-    `;
-    document.getElementById("price").innerHTML=`
-    ${produitData.price}
-    `;
+    document.getElementById("description").innerHTML=`${produitData.description}`;
+    document.getElementById("price").innerHTML=`${produitData.price}`;
     let select  = document.getElementById("colors");
     console.log(select);
 
-    console.log(produitData.varnish);
+    console.log(produitData.colors);
 
     produitData.colors.forEach((colors) => {
         console.log(colors);
@@ -49,7 +45,7 @@ const ajoutPanier = ( ) =>{
     console.log(select.value);
     console.log(produitTableau)
     const fusionProduitCouleur = Object.assign({} , produitData, {
-        couleur :`${select.value}`, 
+        colors :`${select.value}`, 
         quantite : 1,
     }
         );
