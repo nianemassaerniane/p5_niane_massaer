@@ -1,4 +1,4 @@
-fillSection();
+sectionRemplir();
 
 // Lancement et Récupération des données de l'API
 async function kanapDonnee() {
@@ -13,8 +13,13 @@ async function sectionRemplir() {
         const articles = resultatAPI;
         console.table(articles);
         for (let article in articles) {
-        
+          // Insertion de l'élément "a"
+          let lienProduit = document.createElement("a");
+          document.querySelector(".items").appendChild(lienProduit);
+          lienProduit.href = `product.html?id=${resultatAPI[article]._id}`;
+
         }
     })
 }
+
 
