@@ -18,8 +18,34 @@ async function sectionRemplir() {
           document.querySelector(".items").appendChild(lienProduit);
           lienProduit.href = `product.html?id=${resultatAPI[article]._id}`;
 
+          // Integration de l'élément "article"
+          let articleProduit = document.createElement("article");
+          lienProduit.appendChild(articleProduit);
+
+           // Integration de l'image
+           let imageProduit = document.createElement("img");
+           articleProduit.appendChild(imageProduit);
+           imageProduit.src = resultatAPI[article].imageUrl;
+           imageProduit.alt = resultatAPI[article].altTxt;
+
+            // Integration du nom de l'image "
+            let nomProduit = document.createElement("h3");
+            articleProduit.appendChild(nomProduit);
+            nomProduit.classList.add("nomProduit");
+            nomProduit.innerHTML = resultatAPI[article].name;
+
+             // Insertion de la description "p"
+             let descriptionProduit = document.createElement("p");
+             articleProduit.appendChild(descriptionProduit);
+             descriptionProduit.classList.add("nomProduit");
+             descriptionProduit.innerHTML = resultatAPI[article].description;
+
+
         }
     })
+    .catch (function(error){
+        return error;
+    });
 }
 
 

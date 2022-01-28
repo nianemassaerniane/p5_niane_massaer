@@ -132,7 +132,7 @@ main {
 	flex-wrap: wrap;
 }
 .items a {
-	width: 21%;
+	width: 35%;
 	text-decoration: none;
 	color: unset;
 }
@@ -150,8 +150,8 @@ main {
 	border-radius: 10px;
 }
 .items article img {
-	width: 160px;
-	height: 160px;
+	width: 350px;
+	height: 260px;
 	object-fit: cover;
 	border-radius: 10px;
 }
