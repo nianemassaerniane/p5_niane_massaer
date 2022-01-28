@@ -17,7 +17,7 @@ h2 {
 /************/
 .cart__item {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	border-top: 1px solid white;
 	padding-top: 35px;
 	margin-bottom: 30px;
@@ -29,14 +29,11 @@ h2 {
 	width: 100%;
 	border-radius: 25px;
 }
-#etatProduit{
-	color: greenyellow;
-}
 .cart__item__content {
 	width: 50%;
 	display: flex;
 	flex-direction: column;
-	/*justify-content: space-between;*/
+	justify-content: space-between;
 }
 .cart__item__content__titlePrice {
 	display: flex;
@@ -48,10 +45,6 @@ h2 {
 }
 .cart__item__content__settings p {
 	margin: 0;
-}
-.cart__item__content__settings{
-	display: flex;
-	justify-content: space-between;
 }
 .cart__item__content__settings input {
 	color: var(--footer-secondary-color);
@@ -74,8 +67,6 @@ h2 {
 }
 .cart__item__content__settings__delete p {
 	display: inline;
-
-	
 }
 .cart__item__content__settings__delete p:hover {
 	cursor: pointer;
