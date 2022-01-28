@@ -28,13 +28,13 @@ async function sectionRemplir() {
            imageProduit.src = resultatAPI[article].imageUrl;
            imageProduit.alt = resultatAPI[article].altTxt;
 
-            // Integration du nom de l'image "
+            // Integration du nom du produit 
             let nomProduit = document.createElement("h3");
             articleProduit.appendChild(nomProduit);
             nomProduit.classList.add("nomProduit");
             nomProduit.innerHTML = resultatAPI[article].name;
 
-             // Insertion de la description "p"
+             // Intégration de la description 
              let descriptionProduit = document.createElement("p");
              articleProduit.appendChild(descriptionProduit);
              descriptionProduit.classList.add("nomProduit");
