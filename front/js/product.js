@@ -124,6 +124,13 @@ function addToCart(article) {
             localStorage.setItem("produit", JSON.stringify(produitLocalStorage));
             console.table(produitLocalStorage);
             popupConfirmation();
-        }}
-        });
+        }
+    }else{
+        
+        alert("la couleur choisie ou le nombre d'articles est invalide! \n merci de verifier votre saisie! ")
+
+    }
+
+        }
+        );
     }
