@@ -171,4 +171,30 @@ function supprimerProduit() {
 }
 supprimerProduit();
 
- 
+ //Instauration formulaire avec regex et modification des champs 
+function gestionDuFormulaire() {
+    // Ajout des Regex
+    let form = document.querySelector(".cart__order__form");
+    let emailRegExp = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$');
+    let charRegExp = new RegExp("^[a-zA-Z ,.'-]+$");
+    let addressRegExp = new RegExp("^[0-9]{1,3}(?:(?:[,. ]){1}[-a-zA-Zàâäéèêëïîôöùûüç]+)+");
+
+    form.firstName.addEventListener('change', function() {
+        validFirstName(this);
+    });
+    form.lastName.addEventListener('change', function() {
+        validLastName(this);
+    });
+    form.address.addEventListener('change', function() {
+        validAddress(this);
+    });
+    form.city.addEventListener('change', function() {
+        validCity(this);
+    });
+    form.email.addEventListener('change', function() {
+        validEmail(this);
+    });
+
+   
+    }
+gestionDuFormulaire();
