@@ -213,12 +213,35 @@ function gestionDuFormulaire() {
         if (charRegExp.test(inputLastName.value)) {
             lastNameErrorMsg.innerHTML = '';
         } else {
-            lastNameErrorMsg.innerHTML = 'Veuillez renseigner ce champ.';
+            lastNameErrorMsg.innerHTML = 'Veuillez bien renseigner ce champ.';
         }
     };
 
-   
+    //verifier la validité de l'adresse 
+    const validAddress = function(inputAddress) {
+        let addressErrorMsg = inputAddress.nextElementSibling;
 
+        if (addressRegExp.test(inputAddress.value)) {
+            addressErrorMsg.innerHTML = '';
+        } else {
+            addressErrorMsg.innerHTML = 'Veuillez bien renseigner ce champ.';
+        }
+    };
+     //verification de la validité de la ville
+     const validCity = function(inputCity) {
+        let cityErrorMsg = inputCity.nextElementSibling;
+
+        if (charRegExp.test(inputCity.value)) {
+            cityErrorMsg.innerHTML = '';
+        } else {
+            cityErrorMsg.innerHTML = 'Veuillez bien renseigner ce champ.';
+        }
+    };
+
+    
+
+
+   
    
     }
 gestionDuFormulaire();
