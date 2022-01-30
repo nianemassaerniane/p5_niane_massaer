@@ -17,7 +17,7 @@ function afficherPanier(){
             articleDuProduit.className = "cart__item";
             articleDuProduit.setAttribute('data-id', produitLocalStorage[produit].idProduit);
         
-            // Insertion de l'élément "div"
+            // Insertion de l'emplacement du conteu produit 
             let imageDuProduitDiv = document.createElement("div");
             articleDuProduit.appendChild(imageDuProduitDiv);
             imageDuProduitDiv.className = "cart__item__img";
@@ -28,12 +28,12 @@ function afficherPanier(){
             imageDuProduit.src = produitLocalStorage[produit].imgProduit;
             imageDuProduit.alt = produitLocalStorage[produit].altImgProduit;
             
-            // Insertion de l'élément "div"
+            // gestion de l'article produit
             let contenuDeArticleProduit = document.createElement("div");
             articleDuProduit.appendChild(contenuDeArticleProduit);
             contenuDeArticleProduit.className = "cart__item__content";
         
-            // Insertion de l'élément "div"
+            // gestion du titre 
             let titrePrixDuProduit = document.createElement("div");
             contenuDeArticleProduit.appendChild(titrePrixDuProduit);
             titrePrixDuProduit.className = "cart__item__content__titlePrice";
@@ -54,12 +54,12 @@ function afficherPanier(){
             titrePrixDuProduit.appendChild(prixDuProduit);
             prixDuProduit.innerHTML = produitLocalStorage[produit].prixProduit + " €";
         
-            // Insertion de l'élément "div"
+            // parametrage des articles
             let parametreDuContenuDeArticleProduit = document.createElement("div");
             contenuDeArticleProduit.appendChild(parametreDuContenuDeArticleProduit);
             parametreDuContenuDeArticleProduit.className = "cart__item__content__settings";
         
-            // Insertion de l'élément "div"
+            // parametrage de la quantité
             let parametreQuantiteDeArticleProduit = document.createElement("div");
             parametreDuContenuDeArticleProduit.appendChild(parametreQuantiteDeArticleProduit);
             parametreQuantiteDeArticleProduit.className = "cart__item__content__settings__quantity";
@@ -79,7 +79,7 @@ function afficherPanier(){
             quantiteProduit.setAttribute("max", "100");
             quantiteProduit.setAttribute("name", "itemQuantity");
         
-            // Insertion de l'élément "div"
+            // Insertion de l'ement supprimer"
             let parametreSupprimerProduit = document.createElement("div");
             parametreDuContenuDeArticleProduit.appendChild(parametreSupprimerProduit);
             parametreSupprimerProduit.className = "cart__item__content__settings__delete";
@@ -120,4 +120,30 @@ function afficherPanier(){
             console.log( totalPrice);
         }
         afficherTotal();
+
+        // Modification d'une quantité de produit
+function modifierQuantite() {
+    let quantiteAModifier = document.querySelectorAll(".itemQuantity");
+
+    for (let k = 0; k < quantiteAModifier.length; k++){
+        quantiteAModifier[k].addEventListener("change" , (event) => {
+            event.preventDefault();
+
+            //Selection de l'element à modifier en fonction de son id ET sa couleur
+            let quantityModif = produitLocalStorage[k].quantiteProduit;
+            let qttModifValue = quantiteAModifier[k].valueAsNumber;
+            
+            const resultFind = produitLocalStorage.find((el) => el.qttModifValue !== quantityModif);
+
+            resultFind.quantiteProduit = qttModifValue;
+            produitLocalStorage[k].quantiteProduit = resultFind.quantiteProduit;
+
+            localStorage.setItem("produit", JSON.stringify(produitLocalStorage));
+        
+            // rafraichir rapidement  
+            location.reload();
+        })
+    }
+}
+modifierQuantite();
  
