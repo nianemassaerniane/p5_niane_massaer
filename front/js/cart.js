@@ -173,7 +173,7 @@ supprimerProduit();
 
  //Instauration formulaire avec regex et modification des champs 
 function gestionDuFormulaire() {
-    // Ajout des Regex
+
     let form = document.querySelector(".cart__order__form");
     let emailRegExp = new RegExp('^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$');
     let charRegExp = new RegExp("^[a-zA-Z ,.'-]+$");
@@ -194,6 +194,19 @@ function gestionDuFormulaire() {
     form.email.addEventListener('change', function() {
         validEmail(this);
     });
+
+     //validation du prénom
+     const validFirstName = function(inputFirstName) {
+        let firstNameErrorMsg = inputFirstName.nextElementSibling;
+
+        if (charRegExp.test(inputFirstName.value)) {
+            firstNameErrorMsg.innerHTML = '';
+        } else {
+            firstNameErrorMsg.innerHTML = 'Veuillez renseigner ce champ.';
+        }
+    };
+
+    
 
    
     }
