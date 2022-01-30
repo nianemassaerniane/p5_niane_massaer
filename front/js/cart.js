@@ -93,3 +93,31 @@ function afficherPanier(){
         }}
         afficherPanier();
     
+        function afficherTotal(){
+
+            // Récupération du total des quantités
+            var quantiteTotal = document.getElementsByClassName('itemQuantity');
+            var myLength = quantiteTotal.length,
+            totalProduit = 0;
+        
+            for (var i = 0; i < myLength; ++i) {
+                totalProduit += quantiteTotal[i].valueAsNumber;
+            }
+        
+            let productTotalQuantity = document.getElementById('totalQuantity');
+            productTotalQuantity.innerHTML = totalProduit;
+            console.log(totalProduit);
+        
+            // Récupération du prix total
+            totalPrice = 0;
+        
+            for (var i = 0; i < myLength; ++i) {
+                totalPrice += (quantiteTotal[i].valueAsNumber * produitLocalStorage[i].prixProduit);
+            }
+        
+            let productTotalPrice = document.getElementById('totalPrice');
+            productTotalPrice.innerHTML =  totalPrice;
+            console.log( totalPrice);
+        }
+        afficherTotal();
+ 
