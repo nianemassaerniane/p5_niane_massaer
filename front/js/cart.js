@@ -195,18 +195,29 @@ function gestionDuFormulaire() {
         validEmail(this);
     });
 
-     //validation du prénom
+     //verifier la validation  du prénom
      const validFirstName = function(inputFirstName) {
         let firstNameErrorMsg = inputFirstName.nextElementSibling;
 
         if (charRegExp.test(inputFirstName.value)) {
             firstNameErrorMsg.innerHTML = '';
         } else {
-            firstNameErrorMsg.innerHTML = 'Veuillez renseigner ce champ.';
+            firstNameErrorMsg.innerHTML = 'Veuillez bien renseigner ce champ.';
         }
     };
 
-    
+    //validation du nom
+    const validLastName = function(inputLastName) {
+        let lastNameErrorMsg = inputLastName.nextElementSibling;
+
+        if (charRegExp.test(inputLastName.value)) {
+            lastNameErrorMsg.innerHTML = '';
+        } else {
+            lastNameErrorMsg.innerHTML = 'Veuillez renseigner ce champ.';
+        }
+    };
+
+   
 
    
     }
