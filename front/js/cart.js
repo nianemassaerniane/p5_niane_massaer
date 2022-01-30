@@ -238,10 +238,16 @@ function gestionDuFormulaire() {
         }
     };
 
+    //validation de l'email
+    const validEmail = function(inputEmail) {
+        let emailErrorMsg = inputEmail.nextElementSibling;
+
+        if (emailRegExp.test(inputEmail.value)) {
+            emailErrorMsg.innerHTML = '';
+        } else {
+            emailErrorMsg.innerHTML = 'Veuillez renseigner votre email.';
+        }
+    };
     
-
-
-   
-   
     }
 gestionDuFormulaire();
