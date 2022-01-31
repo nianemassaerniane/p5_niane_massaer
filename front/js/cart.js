@@ -251,3 +251,22 @@ function gestionDuFormulaire() {
     
     }
 gestionDuFormulaire();
+
+//Envoi des informations client au localstorage
+function envoiDuFormulaire(){
+    const btn_commander = document.getElementById("order");
+
+    //recupérer les donnés du bouton commander 
+    btn_commander.addEventListener("click", (event)=>{
+    
+        //Récupération les coordonnées renseigner dans le formulaire client
+        let inputName = document.getElementById('firstName');
+        let inputLastName = document.getElementById('lastName');
+        let inputAdress = document.getElementById('address');
+        let inputCity = document.getElementById('city');
+        let inputMail = document.getElementById('email');
+
+       
+        })
+}
+envoiDuFormulaire();
