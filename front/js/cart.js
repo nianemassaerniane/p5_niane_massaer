@@ -266,6 +266,46 @@ function envoiDuFormulaire(){
         let inputCity = document.getElementById('city');
         let inputMail = document.getElementById('email');
 
+         //Construction d'un array depuis le local storage
+         let idProducts = [];
+         for (let i = 0; i<produitLocalStorage.length;i++) {
+             idProducts.push(produitLocalStorage[i].idProduit);
+         }
+         console.log(idProducts);
+ 
+         const order = {
+             contact : {
+                 firstName: inputName.value,
+                 lastName: inputLastName.value,
+                 address: inputAdress.value,
+                 city: inputCity.value,
+                 email: inputMail.value,
+             },
+             products: idProducts,
+         } 
+ 
+         const options = {
+             method: 'POST',
+             body: JSON.stringify(order),
+             headers: {
+                 'Accept': 'application/json', 
+                 "Content-Type": "application/json" 
+             },
+         };
+ 
+         fetch("http://localhost:3000/api/products/order", options)
+         .then((response) => response.json())
+         .then((data) => {
+             console.log(data);
+             localStorage.clear();
+             localStorage.setItem("orderId", data.orderId);
+ 
+             document.location.href = "confirmation.html";
+         })
+         .catch((err) => {
+             alert ("Problème avec fetch : " + err.message);
+         });
+
        
         })
 }
