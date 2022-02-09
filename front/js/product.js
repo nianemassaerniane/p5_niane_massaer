@@ -125,12 +125,31 @@ function addToCart(article) {
             console.table(produitLocalStorage);
             popupConfirmation();
         }
-    }else{
+    }
+    else {
+        if( quantityPicked.value <= 0  &&colorPicked.value!="" ){
         
-        alert("la couleur choisie ou le nombre d'articles est invalide! \n merci de verifier votre saisie! ")
-
+        alert("veuillez définr  une quantite !")
     }
 
-        }
+    
+    if(colorPicked.value=="" && quantityPicked.value != 0 ){
+        
+        alert("veuillez choisir une couleur  ! ")
+    }
+
+
+else{ 
+    if(colorPicked.value=="" && quantityPicked.value == 0 ){
+        
+        alert("veuillez remplir les champs ! ")
+    }
+    
+    
+}
+    }
+
+}
+ 
         );
     }
