@@ -91,7 +91,7 @@ function addToCart(article) {
 
      //fenêtre pop-up
      const popupConfirmation =() =>{
-         if(window.confirm(`Votre commande de ${choixQuantite} ${article.name} ${choixCouleur} est ajoutée au panier
+         if(window.confirm(`Votre produit de ${choixQuantite} ${article.name} ${choixCouleur} est ajoutée au panier
  Pour consulter votre panier, cliquez sur OK`)){
              window.location.href ="cart.html";
          }

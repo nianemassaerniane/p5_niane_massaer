@@ -1,6 +1,5 @@
 sectionRemplir();
 
-// Lancement et Récupération des données de l'API
 async function kanapDonnee() {
     var recupereArticle = await fetch("http://localhost:3000/api/products")
     return await recupereArticle.json();
@@ -27,7 +26,6 @@ async function sectionRemplir() {
            articleProduit.appendChild(imageProduit);
            imageProduit.src = resultatAPI[article].imageUrl;
            imageProduit.alt = resultatAPI[article].altTxt;
-
             // Integration du nom du produit 
             let nomProduit = document.createElement("h3");
             articleProduit.appendChild(nomProduit);
